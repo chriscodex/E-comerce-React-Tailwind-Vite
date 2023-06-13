@@ -1,13 +1,11 @@
-import { Layout } from '../../components/Layout'
+import { Layout } from '../../components/Layout';
 
 function Home() {
   return (
-    <>
-      <Layout>
-        <p>Home</p>
-      </Layout>
-    </>
-  )
+    <Layout>
+      <h1>Home</h1>
+    </Layout>
+  );
 }
 
-export { Home }
+export { Home };
