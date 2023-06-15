@@ -3,7 +3,9 @@ import { useContext } from 'react';
 import { ShoppingCartContext } from '../../context';
 
 function ProductDetail() {
-  const { isProductDetailOpen, closeProductDetail } = useContext(ShoppingCartContext)
+  const { isProductDetailOpen, closeProductDetail, productToShow } = useContext(ShoppingCartContext)
+  console.log(productToShow)
+
   const productDetailStyle = 'w-[360px] h-[calc(100vh-68px)] flex flex-col bg-white border border-black rounded-lg fixed right-0 top-[68px]'
   
   return (
@@ -14,6 +16,14 @@ function ProductDetail() {
           <XMarkIcon className="h-6 w-6 text-black" />
         </div>
       </div>
+      <figure className='px-6'>
+          <img className='w-full h-full rounded-lg' src={productToShow.images[0]} alt={productToShow.title} />
+        </figure>
+        <p className='flex flex-col p-6'>
+          <span className='font-medium text-2xl mb-2'>{productToShow.price}</span>
+          <span className='font-medium text-md'>{productToShow.title}</span>
+          <span className='font-light text-sm'>{productToShow.description}</span>
+        </p>
     </aside>
   );
 }
