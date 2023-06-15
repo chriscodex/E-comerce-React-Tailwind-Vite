@@ -12,7 +12,6 @@ function Home() {
       const response = await fetch(`${apiUrl}/products`);
       const products = await response.json();
       setItems(products);
-      console.log(products);
     } catch (error) {
       console.error(`Ocurrió un error: ${error}`);
     }
@@ -25,7 +24,7 @@ function Home() {
   return (
     <Layout>
       <h1>Home</h1>
-      <div className='grid grid-cols-4 gap-4 w-full max-w-screen-lg mt-3'>
+      <div className="grid grid-cols-4 gap-4 w-full max-w-screen-lg mt-3">
         {items?.map((item) => (
           <Card key={item.id} product={item} />
         ))}
