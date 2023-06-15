@@ -1,6 +1,10 @@
 import { NavLink } from 'react-router-dom';
+import { ShoppingCartContext } from '../../context';
+import { useContext } from 'react';
 
 function Navbar() {
+  const {count} = useContext(ShoppingCartContext)
+
   const activeStyle = 'underline underline-offset-4';
 
   return (
@@ -63,7 +67,7 @@ function Navbar() {
         <li>
           <NavLink to="/sign-in">Sign In</NavLink>
         </li>
-        <li>🛒 0</li>
+        <li>🛒 {count}</li>
       </ul>
     </nav>
   );
