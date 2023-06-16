@@ -1,21 +1,47 @@
-import { XMarkIcon } from '@heroicons/react/24/solid';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { XMarkIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartContext } from '../../context';
 import { OrderCard } from '../OrderCard';
 import { TotalPrice } from '../../utils/componentsHelpers';
 import './style.css';
 
 function CheckOutSideMenu() {
-  const { cartProducts, setCartProducts, isCheckoutSideMenuOpen, closeCheckoutSideMenu } =
-    useContext(ShoppingCartContext);
+  const {
+    cartProducts,
+    setCartProducts,
+    isCheckoutSideMenuOpen,
+    closeCheckoutSideMenu,
+    order,
+    setOrder,
+    count,
+    setCount,
+  } = useContext(ShoppingCartContext);
 
-    const handleDelete = (id) => {
-      const filteredProducts = cartProducts.filter((product) => product.id !== id)
-      setCartProducts(filteredProducts)
-    }
+  const handleDelete = (id) => {
+    const filteredProducts = cartProducts.filter(
+      (product) => product.id !== id
+    );
+    setCartProducts(filteredProducts);
+    setCount(count - 1);
+  };
+
+  const handleCheckout = () => {
+    const orderToAdd = {
+      date: new Date(),
+      products: cartProducts,
+      totalProducts: cartProducts.length,
+      totalPrice: TotalPrice(cartProducts),
+    };
+
+    setOrder([...order, orderToAdd]);
+    setCartProducts([]);
+    setCount(0);
+    closeCheckoutSideMenu()
+  };
 
   const productDetailStyle =
-    'scrollable-cards w-[360px] h-[calc(100vh-68px)] flex flex-col bg-white border border-black rounded-lg fixed right-0 top-[68px]';
+    'scrollable-cards w-[360px] h-[calc(100vh-60px)] flex flex-col bg-white border border-black rounded-lg fixed right-0 top-[68px]';
 
   return (
     <aside
@@ -27,7 +53,7 @@ function CheckOutSideMenu() {
           <XMarkIcon className="h-6 w-6 text-black" />
         </div>
       </div>
-      <div className='px-6'>
+      <div className="px-6 flex-1">
         {cartProducts?.map((cartProduct) => (
           <OrderCard
             key={cartProduct.id}
@@ -39,11 +65,21 @@ function CheckOutSideMenu() {
           />
         ))}
       </div>
-      <div className='px-6'>
-        <p className='flex justify-between items-center'>
-          <span className='font-light'>Total: </span>
-          <span className='font-medium text-2xl'>${TotalPrice(cartProducts)}</span>
+      <div className="px-6 mb-6">
+        <p className="flex justify-between items-center mb-2">
+          <span className="font-light">Total: </span>
+          <span className="font-medium text-2xl">
+            ${TotalPrice(cartProducts)}
+          </span>
         </p>
+        <Link to='/my-orders/last'>
+          <button
+            className="w-full bg-black py-3 text-white rounded-lg"
+            onClick={() => handleCheckout()}
+          >
+            Checkout
+          </button>
+        </Link>
       </div>
     </aside>
   );
