@@ -4,7 +4,7 @@ function MyOrders() {
   return (
     <>
       <Layout>
-        <p>MyOrders</p>
+        <p>My Orders</p>
       </Layout>
     </>
   )
