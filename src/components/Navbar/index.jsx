@@ -4,7 +4,7 @@ import { ShoppingCartContext } from '../../context';
 import { useContext } from 'react';
 
 function Navbar() {
-  const { count } = useContext(ShoppingCartContext);
+  const { count, toggleCheckoutSideMenu } = useContext(ShoppingCartContext);
 
   const activeStyle = 'underline underline-offset-4';
 
@@ -68,7 +68,7 @@ function Navbar() {
         <li>
           <NavLink to="/sign-in">Sign In</NavLink>
         </li>
-        <li className="flex items-center justify-between">
+        <li onClick={() => toggleCheckoutSideMenu()} className="flex items-center justify-between">
           <ShoppingCartIcon className="h-6 w-6 text-black" />
           {count}
         </li>
