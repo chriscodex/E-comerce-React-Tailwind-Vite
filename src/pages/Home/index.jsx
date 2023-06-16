@@ -3,7 +3,7 @@ import { Layout } from '../../components/Layout';
 import { Card } from '../../components/Card';
 import { ProductDetail } from '../../components/ProductDetail';
 
-import { apiUrl } from '../../api';
+import { apiUrl } from '../../utils/api';
 
 function Home() {
   const [items, setItems] = useState(null);
@@ -29,7 +29,7 @@ function Home() {
         {items?.map((item) => (
           <Card key={item.id} product={item} />
         ))}
-      </div>
+      </div> 
       <ProductDetail />
     </Layout>
   );

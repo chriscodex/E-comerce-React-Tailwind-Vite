@@ -2,7 +2,7 @@ import { TrashIcon } from '@heroicons/react/24/solid';
 
 function OrderCard({ id, title, imageUrl, price, handleDelete }) {
   return (
-    <div className="flex justify-between items-center px-6">
+    <div className="flex justify-between items-center">
       <div className="flex items-center gap-2 mb-4">
         <figure className="w-20 h-20">
           <img
