@@ -1,6 +1,6 @@
-import { XMarkIcon } from '@heroicons/react/24/solid';
+import { TrashIcon } from '@heroicons/react/24/solid';
 
-function OrderCard({ title, imageUrl, price }) {
+function OrderCard({ id, title, imageUrl, price, handleDelete }) {
   return (
     <div className="flex justify-between items-center px-6">
       <div className="flex items-center gap-2 mb-4">
@@ -15,7 +15,10 @@ function OrderCard({ title, imageUrl, price }) {
       </div>
       <div className="flex items-center gap-2">
         <p className="text-lg font-medium">{price}</p>
-        <XMarkIcon className="h-5 w-5 text-black cursor-pointer" />
+        <TrashIcon
+          onClick={() => handleDelete(id)}
+          className="h-5 w-5 text-black cursor-pointer"
+        />
       </div>
     </div>
   );

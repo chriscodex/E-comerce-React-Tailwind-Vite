@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { PlusIcon } from '@heroicons/react/24/solid';
+import { PlusIcon, CheckIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartContext } from '../../context';
 
 function Card({ product }) {
@@ -12,21 +12,42 @@ function Card({ product }) {
     cartProducts,
     setCartProducts,
     openCheckoutSideMenu,
-    closeCheckoutSideMenu
+    closeCheckoutSideMenu,
   } = useContext(ShoppingCartContext);
 
   const showProduct = (productDetail) => {
     openProductDetail();
     setProductToShow(productDetail);
-    closeCheckoutSideMenu()
+    closeCheckoutSideMenu();
   };
 
   const addProductsToCart = (event, product) => {
-    event.stopPropagation()
-    closeProductDetail()
-    setCartProducts([...cartProducts, product])
-    openCheckoutSideMenu()
+    event.stopPropagation();
+    closeProductDetail();
+    setCartProducts([...cartProducts, product]);
+    openCheckoutSideMenu();
     setCount(count + 1);
+  };
+
+  const renderIcon = (id) => {
+    const isInCart = cartProducts.some((product) => product.id === id);
+
+    if (isInCart) {
+      return (
+        <div className="bg-black absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium">
+          <CheckIcon className="h-6 w-6 text-white" />
+        </div>
+      );
+    } else {
+      return (
+        <div
+          className="bg-white absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium"
+          onClick={(event) => addProductsToCart(event, product)}
+        >
+          <PlusIcon className="h-6 w-6 text-black" />
+        </div>
+      );
+    }
   };
 
   return (
@@ -43,12 +64,7 @@ function Card({ product }) {
           src={product.images[0]}
           alt="headphones"
         />
-        <div
-          className="bg-white absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium"
-          onClick={(event) => addProductsToCart(event, product)}
-        >
-          <PlusIcon className="h-6 w-6 text-black" />
-        </div>
+        {renderIcon(product.id)}
       </figure>
       <p className="flex justify-between items-center">
         <span className="text-sm font-light">{product.title}</span>

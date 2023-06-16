@@ -22,7 +22,6 @@ const ShoppingCartProvider = ({ children }) => {
   const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true);
   const closeCheckoutSideMenu = () => {
     setIsCheckoutSideMenuOpen(false);
-    console.log(cartProducts)
   }
   const toggleCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
 

@@ -5,11 +5,16 @@ import { OrderCard } from '../OrderCard';
 import './style.css';
 
 function CheckOutSideMenu() {
-  const { cartProducts, isCheckoutSideMenuOpen, closeCheckoutSideMenu } =
+  const { cartProducts, setCartProducts, isCheckoutSideMenuOpen, closeCheckoutSideMenu } =
     useContext(ShoppingCartContext);
 
+    const handleDelete = (id) => {
+      const filteredProducts = cartProducts.filter((product) => product.id !== id)
+      setCartProducts(filteredProducts)
+    }
+
   const productDetailStyle =
-    'scrollable-cards w-[360px] h-[calc(100vh-68px)] flex flex-col bg-white border border-black rounded-lg fixed right-0 top-[68px]';
+    'w-[360px] h-[calc(100vh-68px)] flex flex-col bg-white border border-black rounded-lg fixed right-0 top-[68px]';
 
   return (
     <aside
@@ -21,13 +26,15 @@ function CheckOutSideMenu() {
           <XMarkIcon className="h-6 w-6 text-black" />
         </div>
       </div>
-      <div>
+      <div className='overflow-y-scroll'>
         {cartProducts?.map((cartProduct) => (
           <OrderCard
             key={cartProduct.id}
+            id={cartProduct.id}
             title={cartProduct.title}
             imageUrl={cartProduct.images[0]}
             price={cartProduct.price}
+            handleDelete={handleDelete}
           />
         ))}
       </div>
