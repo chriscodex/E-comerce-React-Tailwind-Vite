@@ -70,7 +70,7 @@ function Navbar() {
         </li>
         <li onClick={() => toggleCheckoutSideMenu()} className="flex items-center justify-between">
           <ShoppingCartIcon className="h-6 w-6 text-black" />
-          {count}
+          <span className='ml-1'>{count}</span>
         </li>
       </ul>
     </nav>
