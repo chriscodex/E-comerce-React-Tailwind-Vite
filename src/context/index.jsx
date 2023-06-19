@@ -11,10 +11,12 @@ const ShoppingCartProvider = ({ children }) => {
   const [cartProducts, setCartProducts] = useState([]);
 
   // Shopping Cart · Order
-  const [order, setOrder] = useState([])
+  const [order, setOrder] = useState([]);
 
   // Get products
   const [items, setItems] = useState(null);
+
+  
 
   const fetchData = async () => {
     try {
@@ -30,6 +32,24 @@ const ShoppingCartProvider = ({ children }) => {
     fetchData();
   }, []);
 
+  // Products filtered
+  const [searchByTitle, setSearchByTitle] = useState(null);
+
+  // Get Products filtered
+  const [filteredItems, setFilteredItems] = useState(null);
+
+  const filteredItemsByTitle = (items, searchInput) => {
+    return items?.filter((item) =>
+      item.title.toLowerCase().includes(searchInput.toLowerCase())
+    );
+  };
+
+  useEffect(() => {
+    if (searchByTitle)
+      setFilteredItems(filteredItemsByTitle(items, searchByTitle));
+  }, [items, searchByTitle]);
+
+
   // Product Detail - Open/Close
   const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
   const openProductDetail = () => setIsProductDetailOpen(true);
@@ -43,8 +63,9 @@ const ShoppingCartProvider = ({ children }) => {
   const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true);
   const closeCheckoutSideMenu = () => {
     setIsCheckoutSideMenuOpen(false);
-  }
-  const toggleCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
+  };
+  const toggleCheckoutSideMenu = () =>
+    setIsCheckoutSideMenuOpen(!isCheckoutSideMenuOpen);
 
   return (
     <ShoppingCartContext.Provider
@@ -65,7 +86,10 @@ const ShoppingCartProvider = ({ children }) => {
         order,
         setOrder,
         items,
-        setItems
+        setItems,
+        searchByTitle,
+        setSearchByTitle,
+        filteredItems
       }}
     >
       {children}
