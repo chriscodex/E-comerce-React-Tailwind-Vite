@@ -1,4 +1,5 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
+import { apiUrl } from '../utils/api';
 
 const ShoppingCartContext = createContext();
 
@@ -11,6 +12,23 @@ const ShoppingCartProvider = ({ children }) => {
 
   // Shopping Cart · Order
   const [order, setOrder] = useState([])
+
+  // Get products
+  const [items, setItems] = useState(null);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`${apiUrl}/products`);
+      const products = await response.json();
+      setItems(products);
+    } catch (error) {
+      console.error(`Ocurrió un error: ${error}`);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   // Product Detail - Open/Close
   const [isProductDetailOpen, setIsProductDetailOpen] = useState(false);
@@ -45,7 +63,9 @@ const ShoppingCartProvider = ({ children }) => {
         closeCheckoutSideMenu,
         toggleCheckoutSideMenu,
         order,
-        setOrder
+        setOrder,
+        items,
+        setItems
       }}
     >
       {children}
