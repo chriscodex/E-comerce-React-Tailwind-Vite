@@ -5,29 +5,18 @@ import { ProductDetail } from '../../components/ProductDetail';
 import { ShoppingCartContext } from '../../context';
 
 function Home() {
-  const { items, searchByTitle, setSearchByTitle, filteredItems } = useContext(ShoppingCartContext);
+  const { setSearchByTitle, filteredItems } =
+    useContext(ShoppingCartContext);
 
   const renderView = () => {
-    if (searchByTitle?.length > 0) {
-      if (filteredItems?.length > 0) {
-        return (
-          filteredItems?.map((item) => (
-            <Card key={item.id} product={item} />
-          ))
-        )
-      } else {
-        return (
-          <div>Product not found</div>
-        )
-      }
+    if (filteredItems?.length > 0) {
+      return filteredItems?.map((item) => (
+        <Card key={item.id} product={item} />
+      ));
     } else {
-      return (
-        items?.map((item) => (
-          <Card key={item.id} product={item} />
-        ))
-      )
-    } 
-  }
+      return <div>Product not found</div>;
+    }
+  };
 
   return (
     <Layout>
@@ -42,9 +31,6 @@ function Home() {
       />
       <div className="grid grid-cols-4 gap-4 w-full max-w-screen-lg mt-3">
         {renderView()}
-        {/* {items?.map((item) => (
-          <Card key={item.id} product={item} />
-        ))} */}
       </div>
       <ProductDetail />
     </Layout>

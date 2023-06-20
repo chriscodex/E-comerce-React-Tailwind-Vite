@@ -4,7 +4,8 @@ import { ShoppingCartContext } from '../../context';
 import { useContext } from 'react';
 
 function Navbar() {
-  const { count, toggleCheckoutSideMenu } = useContext(ShoppingCartContext);
+  const { count, toggleCheckoutSideMenu, setSearchByCategory } =
+    useContext(ShoppingCartContext);
 
   const activeStyle = 'underline underline-offset-4';
 
@@ -19,54 +20,45 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={() => setSearchByCategory('shop')}
+            onClick={() => setSearchByCategory()}
           >
             All
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/clothes"
+            to="/furniture"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={() => setSearchByCategory('clothes')}
-          >
-            Clothes
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/electronics"
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={() => setSearchByCategory('electronics')}
-          >
-            Electronics
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="/furnitures"
-            className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={() => setSearchByCategory('furnitures')}
+            onClick={() => setSearchByCategory('Furniture')}
           >
             Furnitures
           </NavLink>
         </li>
         <li>
           <NavLink
-            to="/toys"
+            to="/electronics"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={() => setSearchByCategory('toys')}
+            onClick={() => setSearchByCategory('Electronics')}
           >
-            Toys
+            Electronics
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/shoes"
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('Shoes')}
+          >
+            Shoes
           </NavLink>
         </li>
         <li>
           <NavLink
             to="/others"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
-            onClick={() => setSearchByCategory('others')}
+            onClick={() => setSearchByCategory('Others')}
           >
-            Toys
+            Others
           </NavLink>
         </li>
       </ul>
@@ -82,9 +74,12 @@ function Navbar() {
         <li>
           <NavLink to="/sign-in">Sign In</NavLink>
         </li>
-        <li onClick={() => toggleCheckoutSideMenu()} className="flex items-center justify-between">
+        <li
+          onClick={() => toggleCheckoutSideMenu()}
+          className="flex items-center justify-between"
+        >
           <ShoppingCartIcon className="h-6 w-6 text-black" />
-          <span className='ml-1'>{count}</span>
+          <span className="ml-1">{count}</span>
         </li>
       </ul>
     </nav>
