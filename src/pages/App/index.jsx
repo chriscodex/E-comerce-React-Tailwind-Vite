@@ -25,7 +25,7 @@ const AppRoutes = () => {
       element: <Home />,
     },
     {
-      path: '/fornitures',
+      path: '/furnitures',
       element: <Home />,
     },
     {

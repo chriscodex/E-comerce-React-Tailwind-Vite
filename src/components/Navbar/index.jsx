@@ -19,6 +19,7 @@ function Navbar() {
           <NavLink
             to="/"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('shop')}
           >
             All
           </NavLink>
@@ -27,6 +28,7 @@ function Navbar() {
           <NavLink
             to="/clothes"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('clothes')}
           >
             Clothes
           </NavLink>
@@ -35,6 +37,7 @@ function Navbar() {
           <NavLink
             to="/electronics"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('electronics')}
           >
             Electronics
           </NavLink>
@@ -43,6 +46,7 @@ function Navbar() {
           <NavLink
             to="/furnitures"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('furnitures')}
           >
             Furnitures
           </NavLink>
@@ -51,6 +55,16 @@ function Navbar() {
           <NavLink
             to="/toys"
             className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('toys')}
+          >
+            Toys
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/others"
+            className={({ isActive }) => (isActive ? activeStyle : undefined)}
+            onClick={() => setSearchByCategory('others')}
           >
             Toys
           </NavLink>
