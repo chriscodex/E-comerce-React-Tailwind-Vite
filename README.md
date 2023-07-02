@@ -1,106 +1,46 @@
-# E-Comerce: React.js - Vite.js - TailwindCSS
+<h1 align="center"> E-Comerce: React.js - Vite.js - TailwindCSS </h1>
 
-_Acá va un párrafo que describa lo que es el proyecto_
+<img src = "https://img.shields.io/badge/React.js-1c2c4c?style=flat&logo=react&logoColor=%2361DAFB"> <img src = "https://img.shields.io/badge/Javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E"> <img src = "https://img.shields.io/badge/Vite.js-%23646CFF.svg?style=flat&logo=vite&logoColor=white"> <img src="https://img.shields.io/badge/TailwindCSS-%2338B2AC.svg?style=flat&logo=tailwind-css&logoColor=white"> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white">
 
-## Comenzando 🚀
+Este repositorio contiene una aplicación web de un E-comerce desarrollada con React, Tailwind CSS y Vite,js. Presenta un diseño moderno y con una experiencia de usuario fluida. Permite a los usuarios explorar y comprar una variedad de productos, con funcionalidades de búsqueda, filtrado y carrito de compras. El proyecto utiliza HTML y CSS para la estructura y el estilo, junto con la potencia de React y la eficiencia de Vite.js para ofrecer un rendimiento óptimo.
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+---
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+## **Tabla de Contenidos** 📖  
+1. [Instalación](#instalación-)
+2. [Ejecutando la aplicación](#ejecutando-la-aplicación-)
+3. [Implementación](#implementación-)
 
+---
 
-### Pre-requisitos 📋
+## **Instalación** 🔧
 
-_Que cosas necesitas para instalar el software y como instalarlas_
-
-```
-Da un ejemplo
-```
-
-### Instalación 🔧
-
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
-
-_Dí cómo será ese paso_
-
-```
-Da un ejemplo
+- Instalar las dependencias necesarias para este proyecto
+```bash
+$ npm install
 ```
 
-_Y repite_
+---
 
-```
-hasta finalizar
-```
+## **Ejecutando la aplicación** 🚀
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+```bash
+# preview
+$ npm run preview
 
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
-
-```
-Da un ejemplo
+# development
+$ npm run dev
 ```
 
-### Y las pruebas de estilo de codificación ⌨️
+---
 
-_Explica que verifican estas pruebas y por qué_
+## Implementación 📦
+El proyecto fue desplegado usando la plataforma de Netlify y se encuentra en este [link](https://singular-stroopwafel-feb937.netlify.app/).
 
-```
-Da un ejemplo
-```
-
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
+---
 
 ## Construido con 🛠️
 
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
-
-## Autores ✒️
-
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
-
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
-
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
-
-## Licencia 📄
-
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* Dona con cripto a esta dirección: `0xf253fc233333078436d111175e5a76a649890000`
-* etc.
-
-
-
----
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊
+* [React.js](https://react.dev/) - Framework web usado
+* [Vite.js](https://vitejs.dev/) - Herramienta de desarrollo y contrucción
+* [TailwindCSS](https://tailwindcss.com/) - Framework CSS
