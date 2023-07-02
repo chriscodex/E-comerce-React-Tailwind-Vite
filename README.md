@@ -4,7 +4,7 @@
 
 ![e-comerce](https://github.com/chriscodex/E-comerce-React-Tailwind-Vite/assets/106860308/75a96430-2eda-4cb2-9033-fcdad767e403)
 
-Este repositorio contiene una aplicación web de un E-comerce desarrollada con React, Tailwind CSS y Vite,js. Presenta un diseño moderno y con una experiencia de usuario fluida. Permite a los usuarios explorar y comprar una variedad de productos, con funcionalidades de búsqueda, filtrado y carrito de compras. El proyecto utiliza HTML y CSS para la estructura y el estilo, junto con la potencia de React y la eficiencia de Vite.js para ofrecer un rendimiento óptimo.
+Este repositorio contiene una aplicación web de un E-comerce desarrollada con React, Tailwind CSS y Vite.js. Presenta un diseño moderno y con una experiencia de usuario fluida. Permite a los usuarios explorar y comprar una variedad de productos, con funcionalidades de búsqueda, filtrado y carrito de compras. El proyecto utiliza HTML y CSS para la estructura y el estilo, junto con la potencia de React y la eficiencia de Vite.js para ofrecer un rendimiento óptimo.
 
 ---
 
