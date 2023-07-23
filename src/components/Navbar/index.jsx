@@ -3,13 +3,15 @@ import { ShoppingCartIcon } from '@heroicons/react/24/solid';
 import { ShoppingCartContext } from '../../context';
 import { useContext, useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import logotipoLight from '../../../public/logotipo-light.svg';
+import logotipoDark from '../../../public/logotipo-dark.svg';
 
 function Navbar() {
   const [isDarkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = (checked) => {
     setDarkMode(checked);
-    const htmlElement = document.querySelector("html");
+    const htmlElement = document.querySelector('html');
     htmlElement.classList.toggle('dark');
   };
 
@@ -22,6 +24,9 @@ function Navbar() {
     <nav className="w-full flex bg-white dark:bg-[#3b3b3b]  justify-between items-center fixed z-10 py-5 px-8 text-sm font-light top-0">
       {/* Lista derecha */}
       <ul className="flex items-center gap-3">
+        <li>{
+          isDarkMode ? (<img className='w-8' src={logotipoDark} alt="logotipo" />) : (<img className='w-8' src={logotipoLight} alt="" />)
+          }</li>
         <li className="font-semibold text-lg dark:text-[white]">
           <NavLink to="/">Shop</NavLink>
         </li>
