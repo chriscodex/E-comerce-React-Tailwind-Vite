@@ -17,11 +17,11 @@ function MyOrder() {
     <Layout>
       <div className="flex w-80 relative items-center justify-center mb-6">
         <Link to={'/my-orders'}>
-          <ChevronLeftIcon className="h-5 w-5 text-black cursor-pointer absolute left-0 top-0" />
+          <ChevronLeftIcon className="h-5 w-5 text-black dark:text-white cursor-pointer absolute left-0 top-0" />
         </Link>
-        <h1 className='font-medium text-lg'>My Order</h1>
+        <h1 className='font-medium text-lg dark:text-white'>My Order</h1>
       </div>
-      <div className="flex flex-col w-80">
+      <div className="flex flex-col w-80 dark:text-white">
         {
           order?.[index]?.products.map((product) => (
             <OrderCard

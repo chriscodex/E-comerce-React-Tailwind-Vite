@@ -34,17 +34,17 @@ function Card({ product }) {
 
     if (isInCart) {
       return (
-        <div className="bg-black absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium">
-          <CheckIcon className="h-6 w-6 text-white" />
+        <div className="bg-[#3b3b3b] dark:bg-white absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium">
+          <CheckIcon className="h-6 w-6 text-white dark:text-[#3b3b3b]" />
         </div>
       );
     } else {
       return (
         <div
-          className="bg-white absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium"
+          className="bg-white dark:bg-[#3b3b3b] absolute top-0 right-0 flex justify-center items-center w-6 h-6 rounded-full m-2 font-medium"
           onClick={(event) => addProductsToCart(event, product)}
         >
-          <PlusIcon className="h-6 w-6 text-black" />
+          <PlusIcon className="h-6 w-6 text-black dark:text-white" />
         </div>
       );
     }
@@ -52,7 +52,7 @@ function Card({ product }) {
 
   return (
     <div
-      className="bg-white cursor-pointer w-56 h-60 rounded-lg"
+      className="bg-white dark:bg-[#3b3b3b] cursor-pointer w-56 h-60 rounded-lg"
       onClick={() => showProduct(product)}
     >
       <figure className="relative mb-2 w-full h-4/5">
@@ -67,8 +67,8 @@ function Card({ product }) {
         {renderIcon(product.id)}
       </figure>
       <p className="flex justify-between items-center">
-        <span className="text-sm font-light">{product.title}</span>
-        <span className="text-lg font-medium">${product.price}</span>
+        <span className="text-sm font-light dark:text-white">{product.title}</span>
+        <span className="text-lg font-medium dark:text-white">${product.price}</span>
       </p>
     </div>
   );

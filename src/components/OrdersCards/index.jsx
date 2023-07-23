@@ -8,7 +8,7 @@ function OrdersCard({ date, totalPrice, totalProducts }) {
   }
   
   return (
-    <div className="flex justify-between items-center mb-3 border border-black rounded-lg w-80 p-4">
+    <div className="flex justify-between items-center mb-3 border border-black dark:border-white rounded-lg w-80 p-4 dark:text-white">
       <div className="flex justify-between w-full">
         <div className="flex flex-col">
           <span className="font-light">{getDate()}</span>
@@ -16,7 +16,7 @@ function OrdersCard({ date, totalPrice, totalProducts }) {
         </div>
         <div className='flex gap-1 items-center'>
           <span className="font-medium text-2xl">${totalPrice}</span>
-          <ChevronRightIcon className="h-6 w-6 text-black cursor-pointer" />
+          <ChevronRightIcon className="h-6 w-6 text-black cursor-pointer dark:text-white" />
         </div>
       </div>
     </div>

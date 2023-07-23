@@ -10,7 +10,7 @@ function MyOrders() {
   return (
     <Layout>
       <div className="flex w-80 relative items-center justify-center mb-4">
-        <h1 className='font-medium text-lg'>My Orders</h1>
+        <h1 className='font-medium text-lg dark:text-white'>My Orders</h1>
       </div>
       {order.map((myOrder, index) => (
         <Link key={index} to={`/my-orders/${index}`}>

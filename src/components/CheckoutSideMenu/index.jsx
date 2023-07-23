@@ -52,7 +52,7 @@ function CheckOutSideMenu() {
       <div className="flex justify-between items-center p-6">
         <h2 className="font-medium text-xl">My Order</h2>
         <div className="cursor-pointer" onClick={() => closeCheckoutSideMenu()}>
-          <XMarkIcon className="h-6 w-6 text-black" />
+          <XMarkIcon className="h-6 w-6 text-black dark:text-white" />
         </div>
       </div>
       <div className="px-6 flex-1">
